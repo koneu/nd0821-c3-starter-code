@@ -1,6 +1,7 @@
 # pixi environments
 .pixi/*
 !.pixi/config.toml
+.huggingface
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

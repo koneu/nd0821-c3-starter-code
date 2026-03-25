@@ -17,4 +17,8 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://koneu:$HF_TOKEN@huggingface.co/spaces/koneu/udacity_api_training master:main
+        run: |
+          git filter-branch --force --index-filter \
+            'git rm -r --cached --ignore-unmatch starter/screenshots' \
+            --prune-empty HEAD
+          git push --force https://koneu:$HF_TOKEN@huggingface.co/spaces/koneu/udacity_api_training master:main

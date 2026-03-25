@@ -121,9 +121,8 @@ dmypy.json
 *.model
 *.weights
 
-# Data files (but keep small sample data)
-*.csv
-!starter/data/census.csv  # Keep the census dataset
+# Data files
+# *.csv intentionally not ignored — census.csv is tracked in git
 
 # Large data directories
 data/large/

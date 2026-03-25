@@ -1,3 +1,4 @@
+import joblib
 from sklearn.metrics import fbeta_score, precision_score, recall_score
 from sklearn.ensemble import RandomForestClassifier
 
@@ -41,6 +42,34 @@ def compute_model_metrics(y, preds):
     precision = precision_score(y, preds, zero_division=1)
     recall = recall_score(y, preds, zero_division=1)
     return precision, recall, fbeta
+
+
+def save_model(model, path):
+    """ Save a trained model to disk.
+
+    Inputs
+    ------
+    model : RandomForestClassifier
+        Trained machine learning model.
+    path : str
+        Path to save the model to.
+    """
+    joblib.dump(model, path)
+
+
+def load_model(path):
+    """ Load a trained model from disk.
+
+    Inputs
+    ------
+    path : str
+        Path to load the model from.
+    Returns
+    -------
+    model : RandomForestClassifier
+        Trained machine learning model.
+    """
+    return joblib.load(path)
 
 
 def inference(model, X):

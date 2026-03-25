@@ -27,4 +27,4 @@ jobs:
         run: flake8 starter/
 
       - name: Run tests with coverage
-        run: pytest starter/ --cov=starter --cov-report=term-missing
+        run: pytest starter/tests/ --cov=starter --cov-report=term-missing

@@ -6,10 +6,8 @@ from sklearn.model_selection import train_test_split
 
 import pandas as pd
 from collections import namedtuple
-import joblib
-
 from ml.data import process_data
-from ml.model import train_model, inference, compute_model_metrics
+from ml.model import train_model, inference, compute_model_metrics, save_model
 
 # Add code to load in the data.
 
@@ -45,9 +43,9 @@ test = ProcessedData(*process_data(
 
 model = train_model(train.X, train.y)
 
-joblib.dump(model, "starter/model/trained_model.pkl")
-joblib.dump(train.encoder, "starter/model/encoder.pkl")
-joblib.dump(train.lb, "starter/model/lb.pkl")
+save_model(model, "starter/model/trained_model.pkl")
+save_model(train.encoder, "starter/model/encoder.pkl")
+save_model(train.lb, "starter/model/lb.pkl")
 
 # Sanity check the results
 

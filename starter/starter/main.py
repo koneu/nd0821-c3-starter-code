@@ -7,12 +7,12 @@ from enum import Enum
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 
-from starter.starter.ml.data import process_data
-from starter.starter.ml.model import inference, compute_model_metrics
+from .ml.data import process_data
+from .ml.model import inference, compute_model_metrics
 
-MODEL_DIR = Path(__file__).parent / "model"
+MODEL_DIR = Path(__file__).parent.parent / "model"
 SLICE_OUTPUT = Path(__file__).parent.parent / "slice_output.txt"
-DATA_PATH = Path(__file__).parent / "data" / "census.csv"
+DATA_PATH = Path(__file__).parent.parent / "data" / "census.csv"
 CAT_FEATURES = [
     "workclass", "education", "marital-status", "occupation",
     "relationship", "race", "sex", "native-country",

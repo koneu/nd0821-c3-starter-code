@@ -8,7 +8,7 @@ version = "0.1.0"
 [tasks]
 test = "pytest starter/tests/ --cov=starter --cov-report=term-missing"
 lint = "flake8 starter/"
-serve = "uvicorn starter.main:app --reload"
+serve = "uvicorn starter.starter.main:app --reload"
 train = "python starter/starter/train_model.py"
 
 [dependencies]

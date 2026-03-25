@@ -17,6 +17,12 @@ jobs:
       - name: Install dependencies
         run: pip install -r starter/requirements.txt pytest-cov
 
+      # - name: Install package
+      #   run: pip install -e starter/
+
+      - name: Train model
+        run: python starter/starter/train_model.py
+
       - name: Lint with flake8
         run: flake8 starter/
 

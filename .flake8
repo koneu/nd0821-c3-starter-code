@@ -1,0 +1,2 @@
+[flake8]
+exclude = .pixi,.git,__pycache__

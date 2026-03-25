@@ -6,6 +6,8 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
+test = "pytest starter/ --cov=starter --cov-report=term-missing"
+lint = "flake8 starter/"
 
 [dependencies]
 dvc = ">=3.67.0,<4"
@@ -16,6 +18,7 @@ fastapi = "==0.117.1"
 uvicorn = { version = "==0.36.0", extras = ["standard"] }
 pydantic = ">=2.11.9"
 pytest = "==8.4.2"
+pytest-cov = "*"
 pytest-asyncio = "==1.2.0"
 httpx = "==0.28.1"
 requests = "==2.32.5"

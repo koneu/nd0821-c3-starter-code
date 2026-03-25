@@ -41,3 +41,5 @@ python-multipart==0.0.20
 httplib2==0.31.0
 dvc>=3.67.0,<4
 flake8>=7.3.0,<8
+torch>=1.0.2
+torchvision>=0.20

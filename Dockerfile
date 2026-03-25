@@ -1,16 +1,18 @@
 FROM python:3.13-slim
 
-WORKDIR /app
+RUN useradd -m -u 1000 user
+USER user
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH
 
-COPY starter/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+WORKDIR $HOME/app
 
-COPY starter/ .
+COPY --chown=user . $HOME/app
 
-RUN pip install --no-cache-dir -e .
+RUN pip install --no-cache-dir --user -r starter/requirements.txt
 
-RUN python starter/train_model.py
+RUN python starter/starter/train_model.py
 
 EXPOSE 7860
 
-CMD ["uvicorn", "starter.main:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "starter.starter.main:app", "--host", "0.0.0.0", "--port", "7860"]

@@ -58,4 +58,3 @@ compute_slice_metrics(
     model, test_df, cat_features, "salary", train.encoder, train.lb,
     output_path="slice_output.txt"
 )
-

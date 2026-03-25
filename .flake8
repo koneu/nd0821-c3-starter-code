@@ -1,2 +1,5 @@
 [flake8]
-exclude = .pixi,.git,__pycache__
+exclude = .pixi,.git,__pycache__, starter/sanitycheck.py, __init__.py
+
+# line too long
+ignore = E501

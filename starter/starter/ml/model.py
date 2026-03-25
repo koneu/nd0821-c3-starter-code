@@ -18,7 +18,7 @@ def train_model(X_train, y_train):
     model : RandomForestClassifier
         Trained machine learning model.
     """
-    model = RandomForestClassifier(random_state=42)
+    model = RandomForestClassifier(n_estimators=200, max_depth=None, random_state=42, class_weight="balanced")
     model.fit(X_train, y_train)
     return model
 
